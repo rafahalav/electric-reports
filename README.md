@@ -240,7 +240,7 @@ typedef struct {
 
 ---
 
-## 👨‍💻 Autor
+## 🧑‍💻 Autor
 
 **Rafael Halav**  
 Technology Professional | Energy • Electrical Technology • Telecommunications • IT • Python • C • AI • Data  
@@ -255,4 +255,3 @@ Technology Professional | Energy • Electrical Technology • Telecommunication
 **Última atualização:** Novembro 2026
 ```
 https://github.com/rafahalav/electric-reports.git
-# electric-reports

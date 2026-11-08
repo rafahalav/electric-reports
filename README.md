@@ -111,31 +111,24 @@ ELECTRIC_MEASUREMENT-V5/
 
 ## 🚀 Instalação e Compilação
 
-### Pré-requisitos
+## Pré-requisitos
 - Sistema Linux/Unix (testado em MX Linux)
 - GCC (GNU Compiler Collection)
 - Make
 
-### Compilar
-```bash
-cd ~/CYBERDECK/12_PROJECTS/ELECTRIC_MEASUREMENT-V5
-
-# Compilar tudo
-make
-
-# Ou compilar passo a passo
-make all
-```
-*O executável será gerado em `bin/electric_reports`*
+> **Dica:** No Debian/Ubuntu/MX Linux, instale tudo com um comando:
+> ```bash
+> sudo apt install build-essential
+> ```
+> Isso instala o GCC, Make e outras ferramentas essenciais de compilação.
 
 ### Executar
 ```bash
-# Via script
+# O script verifica dependências, compila automaticamente se necessário e executa
 ./scripts/start.sh
 
-# Ou diretamente
+# Ou diretamente (se já estiver compilado)
 ./bin/electric_reports
-```
 
 ### Limpar Build
 ```bash

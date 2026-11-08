@@ -30,6 +30,7 @@ OBJS = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
+	mkdir -p bin
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)

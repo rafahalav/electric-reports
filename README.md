@@ -240,7 +240,7 @@ typedef struct {
 
 ---
 
-## 👨‍💻 Autor
+## 🧑‍💻 Autor
 
 **Rafael Halav**  
 Technology Professional | Energy • Electrical Technology • Telecommunications • IT • Python • C • AI • Data  

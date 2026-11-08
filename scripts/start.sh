@@ -1,35 +1,48 @@
 #!/bin/bash
 
-# ============================================================
-# ELECTRIC_REPORTS v0.5
-# Script de inicialização
-# ============================================================
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+NC='\033[0m'
 
-PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-PROGRAM="$PROJECT_DIR/bin/electric_reports"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+BINARY="$PROJECT_ROOT/bin/electric_reports"
 
-clear
+echo -e "${BLUE}╔══════════════════════════════════════════════════╗${NC}"
+echo -e "${BLUE}║         ELECTRIC_REPORTS v0.5 Launcher          ║${NC}"
+echo -e "${BLUE}╚══════════════════════════════════════════════════╝${NC}"
+echo ""
 
-printf '%s\n' "=============================================="
-printf '%s\n' "          ELECTRIC_REPORTS v0.5"
-printf '%s\n' "=============================================="
-printf '\n'
-
-if [ ! -x "$PROGRAM" ]; then
-    printf '%s\n' "[ERROR] Executable not found."
-    printf '%s\n' ""
-    printf '%s\n' "Run 'make' before starting the program."
+if ! command -v gcc &> /dev/null; then
+    echo -e "${RED}[ERRO] GCC não encontrado. Instale: sudo apt install build-essential${NC}"
     exit 1
 fi
 
-printf '%s\n' "[SYSTEM] Starting ELECTRIC_REPORTS..."
-printf '\n'
+if ! command -v make &> /dev/null; then
+    echo -e "${RED}[ERRO] Make não encontrado. Instale: sudo apt install make${NC}"
+    exit 1
+fi
 
-"$PROGRAM"
+if [ ! -f "$BINARY" ]; then
+    echo -e "${YELLOW}[INFO] Binário não encontrado. Compilando projeto...${NC}"
+    echo ""
+    cd "$PROJECT_ROOT"
+    if make all; then
+        echo ""
+        echo -e "${GREEN}[OK] Compilação concluída com sucesso!${NC}"
+        echo ""
+    else
+        echo -e "${RED}[ERRO] Falha na compilação.${NC}"
+        exit 1
+    fi
+else
+    echo -e "${GREEN}[OK] Binário encontrado. Pronto para executar.${NC}"
+    echo ""
+fi
 
-STATUS=$?
+echo -e "${BLUE}Iniciando ELECTRIC_REPORTS...${NC}"
+echo -e "${BLUE}──────────────────────────────────────────────────${NC}"
+echo ""
 
-printf '\n'
-printf '%s\n' "[SYSTEM] Program finished with status: $STATUS"
-
-exit "$STATUS"
+"$BINARY"

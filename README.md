@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="./assets/electric-reports-banner.png"
+       width="100%"
+       alt="Electric Reports v0.5 - Análise de Sistemas Elétricos Trifásicos">
+</p>
+
 # ⚡ ELECTRIC_REPORTS - Sistema de Medição e Análise Elétrica em C
 
 [![C Programming](https://img.shields.io/badge/Language-C-blue.svg)](https://devdocs.io/c/)

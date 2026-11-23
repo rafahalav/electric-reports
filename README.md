@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/electric-reports-banner.png"
+  <img src="./assets/electric-reports-banner.png
        width="100%"
        alt="Electric Reports v0.5 - Análise de Sistemas Elétricos Trifásicos">
 </p>
